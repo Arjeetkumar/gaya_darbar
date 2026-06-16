@@ -151,6 +151,15 @@ app.post('/api/recommend', async (req, res) => {
   }
 });
 
+// Serve React frontend in production
+const distPath = path.resolve(__dirname, '../dist');
+app.use(express.static(distPath));
+
+// Catch-all: send index.html for any non-API route (client-side routing)
+app.get('*', (req, res) => {
+  res.sendFile(path.join(distPath, 'index.html'));
+});
+
 app.listen(PORT, () => {
-  console.log(`Backend server is running on http://localhost:${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
