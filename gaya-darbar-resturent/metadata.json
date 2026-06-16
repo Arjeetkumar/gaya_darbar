@@ -1,0 +1,7 @@
+{
+  "name": "PATNA DARBAR HOUSE & Admin",
+  "description": "A premium restaurant ordering system with AI-powered menu recommendations, real-time order tracking, and a comprehensive admin dashboard for management and delivery logistics.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
